@@ -10,24 +10,14 @@ import profileData from "./routers/profile.js"
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-const allowlist = ['https://mahmoud-resume.netlify.app/'];
 
-const corsOptionsDelegate = (req, callback) => {
-    let corsOptions;
-
-    let isDomainAllowed = whitelist.indexOf(req.header('Origin')) !== -1;
-
-    if (isDomainAllowed ) {
-        // Enable CORS for this request
-        corsOptions = { origin: true }
-    } else {
-        // Disable CORS for this request
-        corsOptions = { origin: false }
-    }
-    callback(null, corsOptions)
+var corsOptions = {
+    origin: 'https://mahmoud-resume.netlify.app',
+    optionsSuccessStatus: 200, // For legacy browser support,
+    methods: "GET, PUT"
 }
 
-app.use(cors(corsOptionsDelegate));
+app.use(cors(corsOptions));
 dotenv.config();
 
 /* ----------------------------------- // ----------------------------------- */
