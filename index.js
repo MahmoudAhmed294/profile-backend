@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 
 /* ----------------------------------- // ----------------------------------- */
 app.get('/', (req, res) => {
-    res.send('BackEnd!')
+    res.send('BackEnd update!')
   })
 
   app.use(function (req, res, next) {
