@@ -15,7 +15,10 @@ var corsOptions = {
     origin: 'https://mahmoud-resume.netlify.app',
     optionsSuccessStatus: 200, // For legacy browser support,
     methods: ['GET', 'PUT', 'POST'],
-    allowedHeaders:['Content-Type', 'Authorization']
+    allowedHeaders:['Content-Type', 'Authorization'],
+        exposedHeaders:['Content-Range', 'X-Content-Range'],
+    credentials:true
+
 }
 
 app.use(cors(corsOptions));
