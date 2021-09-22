@@ -10,7 +10,7 @@ import profileData from "./routers/profile.js"
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors({origin: '*'}));
+app.use(cors());
 dotenv.config();
 
 /* ----------------------------------- // ----------------------------------- */
